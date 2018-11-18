@@ -2,7 +2,7 @@ var path = require('path'); // required for "resolve" option
 
 module.exports = {
   mode: 'development',
-  entry: ['./src/index.js'],
+  entry: ['./src/index.tsx'],
   output: {
     path: __dirname,
     publicPath: '/',
@@ -65,6 +65,12 @@ module.exports = {
       }]
     },
     {
+      test: /\.(ts|tsx)?$/,
+      use: [{
+        loader: 'ts-loader'
+      }]
+    },
+    {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
       use: [{
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
@@ -80,6 +86,7 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
     modules: [
       path.resolve('./src'),
       path.resolve('./node_modules')
