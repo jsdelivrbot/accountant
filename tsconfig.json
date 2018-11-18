@@ -8,7 +8,7 @@
       "allowSyntheticDefaultImports": true,  
       "downlevelIteration": true // this will enable us to iterate over map
     },
-    "include": ["./src/**/*"],
+    "include": ["./client/**/*"],
     "exclude": [
       "node_modules"
     ]
